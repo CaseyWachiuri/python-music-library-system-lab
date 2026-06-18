@@ -1,17 +1,24 @@
 class Song:
 
     # class attributes
-    count
-    genres
-    artists
-    genre_count
-    artists_count
+    count = 0
+    genres = set()
+    artists = set()
+    genre_count = {}
+    artists_count = {}
 
 
     def __init__(self, name, artist, genre):
         self.name = name
         self.artist = artist
         self.genre = genre
+
+    # trigger class methods on creation
+    Song.add_song_to_count()
+    Song.add_to_genres(genre)
+    Song.add_to_artists(artist)
+    Song.add_to_genre_count(genre)
+    Song.add_to_artists_count(artist)
 
     @classmethod
     def add_song_to_count(cls):
