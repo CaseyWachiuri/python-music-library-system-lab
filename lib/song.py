@@ -9,19 +9,32 @@ class Song:
 
 
     def __init__(self, name, artist, genre):
-        pass
+        self.name = name
+        self.artist = artist
+        self.genre = genre
 
-    def add_song_to_count():
-        pass
+    @classmethod
+    def add_song_to_count(cls):
+        cls.count += 1
 
-    def add_to_genres():
-        pass
+    @classmethod
+    def add_to_genres(cls, genre):
+        cls.genres.add(genre)
 
-    def add_to_artists():
-        pass
+    @classmethod
+    def add_to_artists(cls):
+        cls.artists.add(artist)
 
-    def add_to_genre_count():
-        pass
+    @classmethod
+    def add_to_genre_count(cls, genre):
+        if genre in cls.genre_count:
+            cls.genre_count[genre] += 1
+        else:
+            cls.genre_count[genre] = 1
 
-    def add_to_artists_count():
-        pass
+    @classmethod
+    def add_to_artists_count(cls, artist):
+        if artist in cls.artists_count:
+            cls.artists_count[artist] += 1
+        else:
+            cls.artists_count[artist] = 1
